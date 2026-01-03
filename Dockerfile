@@ -4,26 +4,14 @@ ENV DEBIAN_FRONTEND=noninteractive \
     ISO_FILE=ubuntu-22.04.5-desktop-amd64.iso \
     OS_VERSION=22.04.5
 
-ENV damn="""RUN apt-get update && \
-    apt-get install -y \
-        wget \
-        squashfs-tools \
-        xorriso \
-        genisoimage \
-        casper \
-        rsync \
-        grub-pc-bin \
-        grub-efi-amd64-bin \
-        grub-efi-amd64-signed \
-        mtools \
-        ca-certificates && \
-    rm -rf /var/lib/apt/lists/*"""
 
 RUN apt-get update && \
     apt-get install -y \
         wget \
         squashfs-tools \
-        rsync && \
+        rsync \
+        isolinux \
+        xorriso && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /builder
