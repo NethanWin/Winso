@@ -18,8 +18,7 @@ WORKDIR /builder
 
 RUN wget -q https://releases.ubuntu.com/${OS_VERSION}/${ISO_FILE}
 
-COPY docker-build-iso.sh /builder/docker-build-iso.sh
-COPY chroot /builder/chroot
-RUN chmod +x /builder/docker-build-iso.sh
+COPY main.sh /builder/main.sh
+COPY chroot-files /builder/chroot-files
 
-CMD ["/builder/docker-build-iso.sh"]
+CMD ["/builder/main.sh"]
