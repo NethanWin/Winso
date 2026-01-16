@@ -1,0 +1,6 @@
+[xRDP All Actions Allowed]
+Identity=unix-user:*
+Action=*
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
